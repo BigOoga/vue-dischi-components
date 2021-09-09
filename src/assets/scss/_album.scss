@@ -1,0 +1,32 @@
+#album-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#album-container .card {
+  background-color: #2e3a46;
+  padding: 20px;
+  margin: 20px;
+  flex-basis: 200px;
+  text-align: center;
+  min-height: 350px;
+}
+
+#album-container .card img {
+  width: 100%;
+  height: auto;
+}
+
+#album-container .card .title {
+  color: #fff;
+  margin: 15px 0;
+}
+#album-container .card .author,
+#album-container .card .year {
+  color: #808080;
+  font-size: 21px;
+}
+#album-container .card .year {
+  font-size: 16px;
+}
