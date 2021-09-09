@@ -1,23 +1,27 @@
 <template>
-  <section id="album-container">
-    <Card v-for="(disc, index) in displayDiscs" :key="index" :disc="disc" />
-  </section>
+  <div>
+    <Selection @startFilter="filterDiscsBy" :genres="allGenres" />
+    <section id="album-container">
+      <Card v-for="(disc, index) in displayDiscs" :key="index" :disc="disc" />
+    </section>
+  </div>
 </template>
 
 <script>
 import Card from "@/components/Card.vue";
+import Selection from "@/components/Selection.vue";
 import axios from "../../node_modules/axios";
 export default {
   name: "AlbumContainer",
   components: {
     Card,
+    Selection,
   },
   data() {
     return {
       apiURI: "https://flynn.boolean.careers/exercises/api/array/music",
       discs: [],
       displayDiscs: [],
-      key: "All",
     };
   },
   computed: {
